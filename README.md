@@ -101,3 +101,18 @@ is specified in the methodology doc for a future build-out.
 ## License
 
 MIT — see `LICENSE`.
+
+## Interface and current data flow
+
+![National analytics interface using illustrative dashboard metrics](screenshot.jpg)
+
+The screenshot shows the locally served frontend and illustrative dashboard metrics. The current project is a frontend prototype; planned satellite processing and backend services are not implemented.
+
+```mermaid
+flowchart LR
+  Viewer --> Dashboard[Browser dashboard]
+  Samples[Bundled sample sites and waterbodies] --> Dashboard
+  Dashboard --> Maps[Map, asset registry and analytics]
+  Dashboard --> Reports[CSV reports]
+  Dashboard -. optional live requests .-> Public[Public weather and geospatial APIs]
+```
